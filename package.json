@@ -1,0 +1,38 @@
+{
+  "name": "gendiff",
+  "version": "1.0.0",
+  "description": "utility to find differences between config files",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nstme/frontend-project-lvl2.git"
+  },
+  "keywords": [
+    "utility",
+    "configuration",
+    "differences"
+  ],
+  "author": "nstme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nstme/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/nstme/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.11.0",
+    "jest": "^26.0.1"
+  }
+}
