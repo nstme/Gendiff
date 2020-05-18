@@ -2,7 +2,7 @@
   "name": "gendiff",
   "version": "1.0.0",
   "description": "utility to find differences between config files",
-  "main": "index.js",
+  "main": "src/index.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
