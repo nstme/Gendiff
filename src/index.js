@@ -1,5 +1,6 @@
 import program from 'commander';
 import fs from 'fs';
+import _ from 'lodash';
 
 const getContent = (filename) => {
   const cwd = process.cwd();
