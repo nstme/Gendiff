@@ -15,25 +15,24 @@ const gendiff = (filepath1, filepath2) => {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
   const keys = _.union(keys1, keys2);
-  let result = '';
-  for (let key of keys) {
+  const result = keys.reduce((acc, key) => {
     if (keys1.includes(key) && keys2.includes(key)) {
       if (obj1[key] === obj2[key]) {
-        result += `  ${key}: ${obj1[key]}\n`;
+        return acc += `  ${key}: ${obj1[key]}\n`;
       } else {
-        result += `- ${key}: ${obj1[key]}\n`;
-        result += `+ ${key}: ${obj2[key]}\n`;
+        acc += `- ${key}: ${obj1[key]}\n`;
+        acc += `+ ${key}: ${obj2[key]}\n`;
+        return acc;
       }
     } else if (keys1.includes(key) && !keys2.includes(key)) {
-      result += `- ${key}: ${obj1[key]}\n`;
+      return acc += `- ${key}: ${obj1[key]}\n`;
     } else if (!keys1.includes(key) && keys2.includes(key)) {
-      result += `+ ${key}: ${obj2[key]}\n`;
+      return acc += `+ ${key}: ${obj2[key]}\n`;
     } else {
-      throw new Error('Key must be found in at least one object');
+      throw new Error('Key must be found at least in one object');
     }
-  }
-  result = `{\n${result}}`;
-  return result;
+  }, '');
+  return `{\n${result}}`;
 }
 
 export default gendiff;
