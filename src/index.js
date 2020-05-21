@@ -1,8 +1,10 @@
 import fs from 'fs';
+import path from 'path';
 import _ from 'lodash';
 
-const getContent = (path) => {
-  return JSON.parse(fs.readFileSync(path, (err) => {
+const getContent = (filePath) => {
+  const fullPath = path.resolve(process.cwd(), filePath);
+  return JSON.parse(fs.readFileSync(fullPath, (err) => {
     return console.log(`Error: ${err}`);
   }));
 };
