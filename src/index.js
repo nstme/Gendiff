@@ -18,16 +18,16 @@ const gendiff = (filepath1, filepath2) => {
   const result = keys.reduce((acc, key) => {
     if (keys1.includes(key) && keys2.includes(key)) {
       if (obj1[key] === obj2[key]) {
-        return acc += `  ${key}: ${obj1[key]}\n`;
+        return acc += `    ${key}: ${obj1[key]}\n`;
       } else {
-        acc += `- ${key}: ${obj1[key]}\n`;
-        acc += `+ ${key}: ${obj2[key]}\n`;
+        acc += `  - ${key}: ${obj1[key]}\n`;
+        acc += `  + ${key}: ${obj2[key]}\n`;
         return acc;
       }
     } else if (keys1.includes(key) && !keys2.includes(key)) {
-      return acc += `- ${key}: ${obj1[key]}\n`;
+      return acc += `  - ${key}: ${obj1[key]}\n`;
     } else if (!keys1.includes(key) && keys2.includes(key)) {
-      return acc += `+ ${key}: ${obj2[key]}\n`;
+      return acc += `  + ${key}: ${obj2[key]}\n`;
     } else {
       throw new Error('Key must be found at least in one object');
     }
