@@ -1,6 +1,6 @@
-import gendiff from '../src/index.js';
 import { test, expect } from '@jest/globals';
 import fs from 'fs';
+import gendiff from '../src/index.js';
 
 test('flat json', () => {
   const before = './__fixtures__/before.json';
