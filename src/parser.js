@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
+import ini from 'ini';
 
 const getContent = (filePath) => {
   const format = path.extname(filePath);
@@ -15,6 +16,9 @@ const getContent = (filePath) => {
       break;
     case '.yml':
       parse = yaml.safeLoad;
+      break;
+    case '.ini':
+      parse = ini.parse;
       break;
     default:
       throw new Error(`Error! File format '${format}' is not supported`);
