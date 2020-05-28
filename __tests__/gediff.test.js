@@ -8,3 +8,10 @@ test('flat json', () => {
   const expected = fs.readFileSync('./__fixtures__/expected.txt', 'utf-8');
   expect(gendiff(before, after)).toEqual(expected);
 });
+
+test('flat yaml', () => {
+  const before = './__fixtures__/before.yaml';
+  const after = './__fixtures__/after.yaml';
+  const expected = fs.readFileSync('./__fixtures__/expected.txt', 'utf-8');
+  expect(gendiff(before, after)).toEqual(expected);
+});
