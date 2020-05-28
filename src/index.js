@@ -1,11 +1,5 @@
-import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
-
-const getContent = (filePath) => {
-  const fullPath = path.resolve(process.cwd(), filePath);
-  return JSON.parse(fs.readFileSync(fullPath, (err) => console.log(`Error: ${err}`)));
-};
+import getContent from './parser.js';
 
 const getDiff = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
