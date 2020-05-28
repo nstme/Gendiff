@@ -17,3 +17,7 @@ gendiff <pathToFilename1> <pathToFilename2>
 ### Compare two flat YAML files
 
 [![asciicast](https://asciinema.org/a/FVqHh0lqOhuzWa1uXgtbXc1KY.svg)](https://asciinema.org/a/FVqHh0lqOhuzWa1uXgtbXc1KY)
+
+### Compare two flat INI files
+
+[![asciicast](https://asciinema.org/a/wWtbclnOZ6I8hgt4Sd4TWD3CK.svg)](https://asciinema.org/a/wWtbclnOZ6I8hgt4Sd4TWD3CK)
