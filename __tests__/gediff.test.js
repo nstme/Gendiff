@@ -11,7 +11,7 @@ test('flat json', () => {
 });
 
 test('flat yaml', () => {
-  const beforeYaml = './__fixtures__/before.yaml';
-  const afterYaml = './__fixtures__/after.yaml';
+  const beforeYaml = './__fixtures__/before.yml';
+  const afterYaml = './__fixtures__/after.yml';
   expect(gendiff(beforeYaml, afterYaml)).toEqual(expected);
 });
