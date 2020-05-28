@@ -15,3 +15,9 @@ test('flat yaml', () => {
   const afterYaml = './__fixtures__/after.yml';
   expect(gendiff(beforeYaml, afterYaml)).toEqual(expected);
 });
+
+test('flat ini', () => {
+  const beforeIni = './__fixtures__/before.ini';
+  const afterIni = './__fixtures__/after.ini';
+  expect(gendiff(beforeIni, afterIni)).toEqual(expected);
+});
