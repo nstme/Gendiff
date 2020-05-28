@@ -2,16 +2,16 @@ import { test, expect } from '@jest/globals';
 import fs from 'fs';
 import gendiff from '../src/index.js';
 
+const expected = fs.readFileSync('./__fixtures__/expected.txt', 'utf-8');
+
 test('flat json', () => {
-  const before = './__fixtures__/before.json';
-  const after = './__fixtures__/after.json';
-  const expected = fs.readFileSync('./__fixtures__/expected.txt', 'utf-8');
-  expect(gendiff(before, after)).toEqual(expected);
+  const beforeJson = './__fixtures__/before.json';
+  const afterJson = './__fixtures__/after.json';
+  expect(gendiff(beforeJson, afterJson)).toEqual(expected);
 });
 
 test('flat yaml', () => {
-  const before = './__fixtures__/before.yaml';
-  const after = './__fixtures__/after.yaml';
-  const expected = fs.readFileSync('./__fixtures__/expected.txt', 'utf-8');
-  expect(gendiff(before, after)).toEqual(expected);
+  const beforeYaml = './__fixtures__/before.yaml';
+  const afterYaml = './__fixtures__/after.yaml';
+  expect(gendiff(beforeYaml, afterYaml)).toEqual(expected);
 });
