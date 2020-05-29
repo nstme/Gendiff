@@ -5,27 +5,27 @@ const getDiff = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
   const keys = _.union(keys1, keys2);
-  return `{\n${keys.reduce((acc, key) => {
-    let acumulator = acc;
+  const temp = keys.reduce((acc, key) => {
     if (keys1.includes(key) && keys2.includes(key)) {
       if (obj1[key] === obj2[key]) {
-        acumulator += `    ${key}: ${obj1[key]}\n`;
-        return acumulator;
+        acc.push(`    ${key}: ${obj1[key]}`);
+        return acc;
       }
-      acumulator += `  - ${key}: ${obj1[key]}\n`;
-      acumulator += `  + ${key}: ${obj2[key]}\n`;
-      return acumulator;
+      acc.push(`  - ${key}: ${obj1[key]}`);
+      acc.push(`  + ${key}: ${obj2[key]}`);
+      return acc;
     }
     if (keys1.includes(key) && !keys2.includes(key)) {
-      acumulator += `  - ${key}: ${obj1[key]}\n`;
-      return acumulator;
+      acc.push(`  - ${key}: ${obj1[key]}`);
+      return acc;
     }
     if (!keys1.includes(key) && keys2.includes(key)) {
-      acumulator += `  + ${key}: ${obj2[key]}\n`;
-      return acumulator;
+      acc.push(`  + ${key}: ${obj2[key]}`);
+      return acc;
     }
     throw new Error('Key must be found at least in one object');
-  }, '')}}`;
+  }, []);
+  return `{\n${temp.join('\n')}\n}`;
 };
 
 const gendiff = (filepath1, filepath2) => {
