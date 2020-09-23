@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import getContent from './parser.js';
-import { isObject } from 'util';
+// import { isObject } from 'util';
 
 const getDiff = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
