@@ -21,6 +21,4 @@ test.each([
   expect(gendiff(before, after)).toEqual(expected);
 });
 
-test('gendiff deep Json', () => {
-  expect(gendiff(beforeDeepJson, afterDeepJson)).toEqual(expectedDeep);
-});
+test.todo('gendiff deep Json');
